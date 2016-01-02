@@ -140,7 +140,7 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<version>2.1.1</version>
 				<configuration>
-					<warName>help-scout-proj-dylan-moore-1.0</warName>
+					<warName>java-lucene-rest-1.0</warName>
 				</configuration>
 			</plugin>
 			<plugin>
