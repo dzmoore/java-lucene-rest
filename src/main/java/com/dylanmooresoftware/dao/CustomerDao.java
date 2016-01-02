@@ -11,7 +11,7 @@ import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Component;
 
-import com.dylanmooresoftware.customer.Customer;
+import com.dylanmooresoftware.model.Customer;
 
 @Component
 public class CustomerDao {

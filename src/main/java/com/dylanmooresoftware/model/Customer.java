@@ -1,4 +1,4 @@
-package com.dylanmooresoftware.customer;
+package com.dylanmooresoftware.model;
 
 public class Customer {
   private int pk;

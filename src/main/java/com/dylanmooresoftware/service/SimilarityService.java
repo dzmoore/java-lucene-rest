@@ -22,8 +22,8 @@ import org.apache.lucene.store.Directory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.dylanmooresoftware.customer.Customer;
 import com.dylanmooresoftware.dao.CustomerDao;
+import com.dylanmooresoftware.model.Customer;
 
 @Component
 public class SimilarityService {

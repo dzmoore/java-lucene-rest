@@ -1,4 +1,4 @@
-package com.dylanmooresoftware.customer;
+package com.dylanmooresoftware.controller;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dylanmooresoftware.http.UpdateResult;
+import com.dylanmooresoftware.model.Customer;
+import com.dylanmooresoftware.model.UpdateResult;
 import com.dylanmooresoftware.service.CustomerService;
 
 @RestController("customer")

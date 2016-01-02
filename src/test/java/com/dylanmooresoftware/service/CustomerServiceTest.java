@@ -5,7 +5,7 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.dylanmooresoftware.config.WebAppConfigurationAware;
-import com.dylanmooresoftware.customer.Customer;
+import com.dylanmooresoftware.model.Customer;
 
 import junit.framework.TestCase;
 

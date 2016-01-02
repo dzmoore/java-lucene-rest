@@ -7,9 +7,9 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.dylanmooresoftware.customer.Customer;
 import com.dylanmooresoftware.dao.CustomerDao;
-import com.dylanmooresoftware.http.UpdateResult;
+import com.dylanmooresoftware.model.Customer;
+import com.dylanmooresoftware.model.UpdateResult;
 
 @Component
 public class CustomerService {

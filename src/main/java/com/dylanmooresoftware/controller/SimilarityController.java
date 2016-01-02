@@ -1,4 +1,4 @@
-package com.dylanmooresoftware.similarity;
+package com.dylanmooresoftware.controller;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dylanmooresoftware.customer.Customer;
+import com.dylanmooresoftware.model.Customer;
 import com.dylanmooresoftware.service.SimilarityService;
 
 @RestController("similarity")

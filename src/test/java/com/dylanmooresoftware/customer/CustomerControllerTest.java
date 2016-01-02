@@ -17,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 
 import com.dylanmooresoftware.config.WebAppConfigurationAware;
+import com.dylanmooresoftware.model.Customer;
 import com.dylanmooresoftware.service.CustomerIndexService;
 import com.google.gson.Gson;
 

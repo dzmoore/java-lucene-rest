@@ -1,4 +1,4 @@
-package com.dylanmooresoftware.http;
+package com.dylanmooresoftware.model;
 
 public class UpdateResult {
   private String result;

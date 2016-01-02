@@ -1,4 +1,4 @@
-package com.dylanmooresoftware.config;
+package com.dylanmooresoftware.controller;
 
 import java.io.IOException;
 
@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dylanmooresoftware.http.UpdateResult;
+import com.dylanmooresoftware.model.UpdateResult;
 import com.dylanmooresoftware.service.CustomerIndexService;
 
 @RestController("index")
