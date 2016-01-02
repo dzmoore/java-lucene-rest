@@ -18,7 +18,7 @@ public class SimilarityController {
   @Autowired
   private SimilarityService similarityService;
   
-  @RequestMapping("/similarity/similar-to/{pk}/{resultCount}")
+  @RequestMapping("/similarity/customer/{pk}/{resultCount}")
   public List<Customer> customerSimilarToGet(@PathVariable(value="pk") final int pk, @PathVariable(value="resultCount") final int resultCount) {
     logger.debug("customerSimilarToGet: "+String.valueOf(pk));
     

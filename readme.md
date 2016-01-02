@@ -61,7 +61,7 @@ Content-Type: application/json;charset=UTF-8
 Transfer-Encoding: chunked
 Date: Sat, 19 Sep 2015 11:05:48 GMT
 
-{"result":"Update successful."}
+{"result":"Update successful.","error":false}
 
 ```
 
@@ -77,7 +77,8 @@ Content-Type: application/json;charset=UTF-8
 Transfer-Encoding: chunked
 Date: Sat, 19 Sep 2015 11:06:48 GMT
 
-{"result":"Delete successful."}
+{"result":"Update successful.","error":false}
+
 ```
 
 * `GET /index/customers` - updates the index of customer fields
@@ -92,13 +93,13 @@ Content-Type: application/json;charset=UTF-8
 Transfer-Encoding: chunked
 Date: Sat, 19 Sep 2015 11:12:28 GMT
 
-{"result":"Customer index started."}
+{"result":"Customer index started.","error":false}
 ```
 
 * `GET /customer/similar-to/{customer-pk}/{max-number-of-similar-customers}`
 
 ```bash
-curl -i -X GET http://localhost:8080/customer/similar-to/3/10
+curl -i -X GET http://localhost:8080/similarity/customer/3/10
 HTTP/1.1 200 OK
 Server: Apache-Coyote/1.1
 Content-Type: application/json;charset=UTF-8
