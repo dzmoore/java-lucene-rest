@@ -28,11 +28,10 @@ import org.springframework.stereotype.Component;
 import com.dylanmooresoftware.customer.Customer;
 import com.dylanmooresoftware.dao.CustomerDao;
 import com.dylanmooresoftware.http.UpdateResult;
-import com.dylanmooresoftware.service.CustomerService;
 
 @Component
-public class CustomerServiceImpl implements CustomerService {
-  private static final Logger logger = Logger.getLogger(CustomerServiceImpl.class);
+public class CustomerService {
+  private static final Logger logger = Logger.getLogger(CustomerService.class);
 
   @Autowired
   private CustomerDao customerDao;
@@ -43,7 +42,6 @@ public class CustomerServiceImpl implements CustomerService {
   @Autowired
   private Directory index;
 
-  @Override
   public List<Customer> findSimilarCustomers(final int similarToCustomerPk, final int resultCount) {
     /* find the customer in question */
     final Customer customer = customerDao.findCustomer(similarToCustomerPk);
@@ -149,24 +147,20 @@ public class CustomerServiceImpl implements CustomerService {
     return custQryStrBldr.toString();
   }
 
-  @Override
   public Customer getCustomer(final int pk) {
     return customerDao.findCustomer(pk);
   }
 
-  @Override
   public UpdateResult updateCustomer(final Customer customer) {
     final int result = customerDao.updateCustomer(customer);
 
     return result > 0 ? new UpdateResult("Update successful.") : new UpdateResult("Update failed.");
   }
 
-  @Override
   public Customer addCustomer(Customer customer) {
     return customerDao.addCustomer(customer);
   }
 
-  @Override
   public UpdateResult deleteCustomer(int pk) {
     final int result = customerDao.deleteCustomer(pk);
 
