@@ -1,7 +1,5 @@
 package com.dylanmooresoftware.customer;
 
-import java.util.List;
-
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,13 +17,6 @@ public class CustomerController {
   
   @Autowired
   private CustomerService customerService;
-
-  @RequestMapping("/customer/similar-to/{pk}/{resultCount}")
-  public List<Customer> customerSimilarToGet(@PathVariable(value="pk") final int pk, @PathVariable(value="resultCount") final int resultCount) {
-    logger.debug("customerSimilarToGet: "+String.valueOf(pk));
-    
-    return customerService.findSimilarCustomers(pk, resultCount);
-  }
   
   @RequestMapping("/customer/{pk}")
   public Customer customerGet(@PathVariable(value="pk") final int pk) {
