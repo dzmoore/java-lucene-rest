@@ -2,10 +2,10 @@ package com.dylanmooresoftware.customer;
 
 import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.containsString;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -18,7 +18,6 @@ import org.springframework.http.MediaType;
 
 import com.dylanmooresoftware.config.WebAppConfigurationAware;
 import com.dylanmooresoftware.service.CustomerIndexService;
-import com.dylanmooresoftware.service.impl.CustomerIndexServiceImpl;
 import com.google.gson.Gson;
 
 public class CustomerControllerTest extends WebAppConfigurationAware {

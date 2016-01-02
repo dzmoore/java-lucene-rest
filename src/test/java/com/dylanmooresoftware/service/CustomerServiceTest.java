@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.dylanmooresoftware.config.WebAppConfigurationAware;
 import com.dylanmooresoftware.customer.Customer;
-import com.dylanmooresoftware.service.impl.CustomerService;
 
 import junit.framework.TestCase;
 

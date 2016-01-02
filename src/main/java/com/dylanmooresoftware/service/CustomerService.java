@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.dylanmooresoftware.service.impl;
+package com.dylanmooresoftware.service;
 
 import java.io.IOException;
 import java.util.ArrayList;

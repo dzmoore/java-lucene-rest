@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.dylanmooresoftware.http.UpdateResult;
-import com.dylanmooresoftware.service.impl.CustomerService;
+import com.dylanmooresoftware.service.CustomerService;
 
 @RestController("customer")
 public class CustomerController {
