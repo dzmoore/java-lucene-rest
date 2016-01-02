@@ -23,7 +23,10 @@ public class SimilarityControllerTest extends WebAppConfigurationAware {
   
   @Test
   public void findSimilarCustomers() throws Exception {
-    mockMvc.perform(get("/customer/similar-to/1/10"))
+    mockMvc.perform(get("/similarity/similar-to/1/10"))
       .andExpect(status().isOk());
+    
+    mockMvc.perform(get("/similarity/similar-to/9999/10"))
+      .andExpect(status().is5xxServerError());
   }
 }

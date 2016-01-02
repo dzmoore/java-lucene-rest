@@ -41,6 +41,10 @@ public class SimilarityService {
   public List<Customer> findSimilarCustomers(final int similarToCustomerPk, final int resultCount) {
     /* find the customer in question */
     final Customer customer = customerDao.findCustomer(similarToCustomerPk);
+    
+    if (customer == null) {
+      return null;
+    }
 
     final List<Customer> similarCustomers = new ArrayList<>();
 

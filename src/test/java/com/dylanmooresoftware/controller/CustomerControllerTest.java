@@ -37,17 +37,27 @@ public class CustomerControllerTest extends WebAppConfigurationAware {
   
   @Test
   public void customerDelete() throws Exception {
-    mockMvc.perform(delete("/customer/1"))
-      .andExpect(status().isOk());
+    mockMvc.perform(delete("/customer/1")).andExpect(status().isOk());
+    
+    mockMvc.perform(delete("/customer/1")).andExpect(status().is5xxServerError());
   }
   
   @Test
   public void customerPut() throws Exception {
+    Customer customer = new Customer();
+    customer.setPk(8);
+    
+    mockMvc.perform(put("/customer")
+      .contentType(MediaType.APPLICATION_JSON)
+      .content(new Gson().toJson(customer))
+      .accept(MediaType.APPLICATION_JSON))
+      .andExpect(status().isOk());
+    
     mockMvc.perform(put("/customer")
       .contentType(MediaType.APPLICATION_JSON)
       .content(new Gson().toJson(new Customer()))
       .accept(MediaType.APPLICATION_JSON))
-      .andExpect(status().isOk());
+      .andExpect(status().is5xxServerError());
   }
   
   @Test

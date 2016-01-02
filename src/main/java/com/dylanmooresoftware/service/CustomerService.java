@@ -25,7 +25,7 @@ public class CustomerService {
   public UpdateResult updateCustomer(final Customer customer) {
     final int result = customerDao.updateCustomer(customer);
 
-    return result > 0 ? new UpdateResult("Update successful.") : new UpdateResult("Update failed.");
+    return result > 0 ? new UpdateResult("Update successful.") : new UpdateResult("Update failed.", true);
   }
 
   public Customer addCustomer(Customer customer) {
@@ -35,6 +35,6 @@ public class CustomerService {
   public UpdateResult deleteCustomer(int pk) {
     final int result = customerDao.deleteCustomer(pk);
 
-    return result > 0 ? new UpdateResult("Delete successful.") : new UpdateResult("Delete failed.");
+    return result > 0 ? new UpdateResult("Delete successful.") : new UpdateResult("Delete failed.", true);
   }
 }

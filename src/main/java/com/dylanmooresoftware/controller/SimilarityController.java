@@ -22,6 +22,12 @@ public class SimilarityController {
   public List<Customer> customerSimilarToGet(@PathVariable(value="pk") final int pk, @PathVariable(value="resultCount") final int resultCount) {
     logger.debug("customerSimilarToGet: "+String.valueOf(pk));
     
-    return similarityService.findSimilarCustomers(pk, resultCount);
+    final List<Customer> similarCustomers = similarityService.findSimilarCustomers(pk, resultCount);
+    
+    if (similarCustomers == null) {
+      throw new InternalServerErrorException();
+    }
+    
+    return similarCustomers;
   }
 }

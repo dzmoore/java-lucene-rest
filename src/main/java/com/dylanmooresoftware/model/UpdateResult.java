@@ -2,14 +2,22 @@ package com.dylanmooresoftware.model;
 
 public class UpdateResult {
   private String result;
+  private boolean error;
 
   public UpdateResult() {
     super();
+    error = false;
   }
   
   public UpdateResult(final String result) {
     this();
     this.result = result;
+  }
+  
+  public UpdateResult(final String result, final boolean error) {
+    this();
+    this.result = result;
+    this.error = error;
   }
 
   public String getResult() {
@@ -20,12 +28,18 @@ public class UpdateResult {
     this.result = result;
   }
 
+  public boolean isError() {
+    return error;
+  }
+
+  public void setError(boolean error) {
+    this.error = error;
+  }
+
   @Override
   public String toString() {
-    StringBuilder builder = new StringBuilder();
-    builder.append("UpdateResult [result=");
-    builder.append(result);
-    builder.append("]");
-    return builder.toString();
+    return "UpdateResult [result=" + result + ", error=" + error + "]";
   }
+  
+  
 }

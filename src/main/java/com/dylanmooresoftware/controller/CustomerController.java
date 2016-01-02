@@ -43,13 +43,25 @@ public class CustomerController {
   public UpdateResult customerPut(@RequestBody final Customer customer) {
     logger.debug("customerPut: "+String.valueOf(customer));
    
-    return customerService.updateCustomer(customer);
+    final UpdateResult result = customerService.updateCustomer(customer);
+    
+    if (result.isError()) {
+      throw new InternalServerErrorException();
+    }
+    
+    return result;
   }
   
   @RequestMapping(value = "/customer/{pk}", method = RequestMethod.DELETE)
   public UpdateResult customerDelete(@PathVariable(value="pk") final int pk) {
     logger.debug("customerDelete: "+String.valueOf(pk));
+    
+    final UpdateResult result = customerService.deleteCustomer(pk);
+    
+    if (result.isError()) {
+      throw new InternalServerErrorException();
+    }
    
-    return customerService.deleteCustomer(pk);
+    return result;
   }
 }
