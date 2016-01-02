@@ -23,7 +23,13 @@ public class CustomerController {
   public Customer customerGet(@PathVariable(value="pk") final int pk) {
     logger.debug("customerGet: "+String.valueOf(pk));
     
-    return customerService.getCustomer(pk);
+    final Customer customer = customerService.getCustomer(pk);
+    
+    if (customer == null) {
+      throw new ResourceNotFoundException();
+    }
+    
+    return customer;
   }
   
   @RequestMapping(value = "/customer", method = RequestMethod.POST)

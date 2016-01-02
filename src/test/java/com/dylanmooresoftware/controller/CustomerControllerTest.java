@@ -1,4 +1,4 @@
-package com.dylanmooresoftware.customer;
+package com.dylanmooresoftware.controller;
 
 import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.containsString;
@@ -22,13 +22,6 @@ import com.dylanmooresoftware.service.CustomerIndexService;
 import com.google.gson.Gson;
 
 public class CustomerControllerTest extends WebAppConfigurationAware {
-  @Autowired
-  private CustomerIndexService customerIndexService;
-  
-  @Before
-  public void setup() throws IOException {
-    customerIndexService.indexCustomers();
-  }
   
   @Test
   public void customerGet() throws Exception {
@@ -38,12 +31,8 @@ public class CustomerControllerTest extends WebAppConfigurationAware {
         allOf(
           containsString("\"pk\":1"))
     ));
-  }
-  
-  @Test
-  public void findSimilarCustomers() throws Exception {
-    mockMvc.perform(get("/customer/similar-to/1/10"))
-      .andExpect(status().isOk());
+    
+    mockMvc.perform(get("/customer/1000")).andExpect(status().is4xxClientError());
   }
   
   @Test
